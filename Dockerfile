@@ -58,7 +58,7 @@ RUN npm config set maxsockets 1; \
     npm ci --omit=dev; \
     chown -R root:root /usr/src/app;
 
-FROM ubuntu:focal AS final
+FROM nvidia/cuda:12.3.1-base-ubuntu20.04 AS final
 
 ENV \
     NODE_ENV="production" \
